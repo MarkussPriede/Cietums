@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 
+
 class Program {
     
   static void Menu(){
@@ -59,11 +60,19 @@ __________________________________");
 Izvelieties tabulu:
 * 1 - Cietumnieks
 * 2 - Apsargs
-* 3 - Cietuma kamera");
+* 3 - Cietuma kamera
+* 4 - Atpakal");
     
     Console.Write("Ievadiet izveli: ");
     int izvele2 = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine(izvele2);
+    if (izvele2 > 0 && izvele2 < 4){}
+    else if (izvele2 == 4) {
+      Menu();
+    }
+    else {
+      Console.WriteLine("Kļūda. Tiekat novirzits uz galveno izvelni.");
+      Menu();
+    }
   }
   
   public static void Main (string[] args) {
