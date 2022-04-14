@@ -1,0 +1,2 @@
+https://www.guru99.com/c-sharp-access-database.html
+https://www.geeksforgeeks.org/basic-database-operations-using-c-sharp/
