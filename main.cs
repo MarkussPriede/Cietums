@@ -4,7 +4,7 @@ using System.Threading;
 
 class Program {
     
-  static void Menu(){
+  static void Ascii(){
     Console.WriteLine(@"
 **************************************************
 *                    CIETUMS                     *
@@ -20,7 +20,8 @@ class Program {
         ================================");
     Thread.Sleep(1000);
     Console.Clear();
-    
+  }
+  static void Menu(){
     Console.WriteLine(@"
 ----------------------------------
   CIETUMA PARVALDISANAS SISTEMA
@@ -38,8 +39,17 @@ __________________________________");
     
     Console.Write("Ievadiet izveli: ");
     int izvele = Convert.ToInt32(Console.ReadLine());
-    if (izvele < 5 && izvele > 0){
-      Menu2();
+    if (izvele == 1){
+      MenuAdd();
+    }
+    else if (izvele == 2){
+      MenuView();
+    }
+    else if (izvele == 3){
+      MenuDelete();
+    }
+    else if (izvele == 4){
+      MenuSearch();
     }
     else if(izvele == 5){}
     else if (izvele == 6){}
@@ -50,14 +60,95 @@ __________________________________");
     }
   }
 
-  static void Menu2(){
+  static void MenuAdd(){
     Console.Clear();
     Console.WriteLine(@"
 ----------------------------------
   CIETUMA PARVALDISANAS SISTEMA
 ----------------------------------
 
-Izvelieties tabulu:
+Izvelieties tabulu, kura pievienot datus:
+* 1 - Cietumnieks
+* 2 - Apsargs
+* 3 - Cietuma kamera
+* 4 - Atpakal");
+    Console.Write("Ievadiet izveli: ");
+    int izvele2 = Convert.ToInt32(Console.ReadLine());
+    if (izvele2 > 0 && izvele2 < 4){}
+    else if (izvele2 == 4) {
+      Console.Clear();
+      Menu();
+    }
+    else {
+      Console.WriteLine("Kluda. Tiekat novirzits uz galveno izvelni.");
+      Thread.Sleep(1000);
+      Console.Clear();
+      Menu();
+    }
+  }
+  
+  static void MenuView(){
+    Console.Clear();
+    Console.WriteLine(@"
+----------------------------------
+  CIETUMA PARVALDISANAS SISTEMA
+----------------------------------
+
+Izvelieties tabulu, kura velaties skatit datus:
+* 1 - Cietumnieks
+* 2 - Apsargs
+* 3 - Cietuma kamera
+* 4 - Atpakal");
+    Console.Write("Ievadiet izveli: ");
+    int izvele2 = Convert.ToInt32(Console.ReadLine());
+    if (izvele2 > 0 && izvele2 < 4){}
+    else if (izvele2 == 4) {
+      Console.Clear();
+      Menu();
+    }
+    else {
+      Console.WriteLine("Kluda. Tiekat novirzits uz galveno izvelni.");
+      Thread.Sleep(1000);
+      Console.Clear();
+      Menu();
+    }
+  }
+    
+  static void MenuDelete(){
+    Console.Clear();
+    Console.WriteLine(@"
+----------------------------------
+  CIETUMA PARVALDISANAS SISTEMA
+----------------------------------
+
+Izvelieties tabulu, no kuras velaties dzest datus:
+* 1 - Cietumnieks
+* 2 - Apsargs
+* 3 - Cietuma kamera
+* 4 - Atpakal");
+    Console.Write("Ievadiet izveli: ");
+    int izvele2 = Convert.ToInt32(Console.ReadLine());
+    if (izvele2 > 0 && izvele2 < 4){}
+    else if (izvele2 == 4) {
+      Console.Clear();
+      Menu();
+    }
+    else {
+      Console.WriteLine("Kluda. Tiekat novirzits uz galveno izvelni.");
+      Thread.Sleep(1000);
+      Console.Clear();
+      Menu();
+    }
+  }
+    
+  static void MenuSearch(){
+    Console.Clear();
+    Console.WriteLine(@"
+----------------------------------
+  CIETUMA PARVALDISANAS SISTEMA
+----------------------------------
+
+Izvelieties tabulu, kura meklet datus:
 * 1 - Cietumnieks
 * 2 - Apsargs
 * 3 - Cietuma kamera
@@ -67,15 +158,19 @@ Izvelieties tabulu:
     int izvele2 = Convert.ToInt32(Console.ReadLine());
     if (izvele2 > 0 && izvele2 < 4){}
     else if (izvele2 == 4) {
+      Console.Clear();
       Menu();
     }
     else {
-      Console.WriteLine("Kļūda. Tiekat novirzits uz galveno izvelni.");
+      Console.WriteLine("Kluda. Tiekat novirzits uz galveno izvelni.");
+      Thread.Sleep(1000);
+      Console.Clear();
       Menu();
     }
   }
-  
+
   public static void Main (string[] args) {
+    Ascii();
     Menu();
   }
 }
